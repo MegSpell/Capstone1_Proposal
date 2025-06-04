@@ -40,7 +40,7 @@ Web application, fully responsive for desktop and mobile users.
 
 GOAL:
 
-The goal is to create a compassionate and efficient tool for connecting potential adopters with adoptable dogs. The platform will allow users to easily search for, learn about, and apply to adopt dogs. It will also highlight random dogs that may have otherweise been overlooked in your search to help encourage open-minded adopted decisions!
+The goal is to create a compassionate and efficient tool for connecting potential adopters with adoptable dogs. The platform will allow users to easily search for, learn about, and apply to adopt dogs. It will also highlight random dogs that may have otherwise been overlooked in your search to help encourage open-minded adopted decisions!
 
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
