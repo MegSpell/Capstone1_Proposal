@@ -7,7 +7,7 @@ Project Proposal: HOME FUR GOOD
 
 DESCRIPTION:
 
-Home Fur Good is a dog adoption web application built using the Petfinder API. The site aims to help dogs—especially those in high-kill shelters—find permanent, loving homes. The homepage will feature a rotating spotlight section to highlight newly adoptable dogs or those with the most urgent needs. Users will be able to search for dogs based on detailed criteria including breed, age, weight, color, size, temperament, and more. Users can create accounts to save dogs they like and submit adoption applications. There will also be an admin login for shelter staff to view applications or feature certain dogs. The site will be fully responsive and accessible on both desktop and mobile devices.
+Home Fur Good is a dog adoption web application built using the Petfinder API. The site aims to help dogs find permanent, loving homes. The homepage will feature a random spotlight section to highlight random adoptable dogs. Users will be able to search for dogs based on detailed criteria including breed, age, weight, color, size, temperament, and more. Users can create accounts to save dogs they like and submit adoption applications. A stretch goal would be to have an admin side that will have an admin login for shelter staff to view applications or feature specific dogs. The site will be fully responsive and accessible on both desktop and mobile devices.
 
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
@@ -20,7 +20,7 @@ STACK:
 
 --API: Petfinder API (external), and a custom internal API for user data and saved dogs
 
---Optional Tools: WTForms, Flask-Login, Flask-WTF for forms and auth, Flask-Mail (stretch goal)
+--Optional Tools: WTForms, Flask-Login, Flask-WTF for forms and auth, Flask-Mail (*Stretch goal)
 
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
@@ -40,7 +40,7 @@ Web application, fully responsive for desktop and mobile users.
 
 GOAL:
 
-The goal is to create a compassionate and efficient tool for connecting potential adopters with adoptable dogs, focusing on those in high-risk situations. The platform will allow users to easily search for, learn about, and apply to adopt dogs. It will also give shelters a way to highlight dogs that need urgent attention.
+The goal is to create a compassionate and efficient tool for connecting potential adopters with adoptable dogs. The platform will allow users to easily search for, learn about, and apply to adopt dogs. It will also highlight random dogs that may have otherweise been overlooked in your search to help encourage open-minded adopted decisions!
 
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
@@ -48,8 +48,7 @@ The goal is to create a compassionate and efficient tool for connecting potentia
 USERS:
 
 --Primary Users: Individuals looking to adopt a dog
---Secondary Users: Shelter administrators/staff managing dog visibility or viewing applications
-
+--Secondary Users: Admin (*Stretch Goal)
 
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
@@ -58,9 +57,8 @@ DATA:
 
 The app will pull data from the Petfinder API, focusing only on dogs. Data will include:
 --Dog details (name, age, breed, location, shelter, photo, description, temperament, etc.)
---Flags or tags indicating high-kill shelter status or urgent adoption needs (if available)
---User-generated data such as saved dogs, applications, and profile preferences will be stored in a PostgreSQL database
---An internal API will be created to manage user accounts, saved dogs, and applications
+--User-generated data such as saved dogs, applications(*Stretch goal), and basic user profile data will be stored in a PostgreSQL database
+--An internal API will be created to manage user accounts, saved dogs, and applications(*Stretch goal)
 
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
@@ -69,17 +67,17 @@ APPROACH & PLANNING:
 
 Database Schema (initial concept):
 --Users (id, username, email, password_hash)
---SavedDogs (id, user_id, dog_id_from_API, saved_date)
---Applications (id, user_id, dog_id_from_API, application_text, submitted_at)
---Admins (id, username, password_hash)
+--SavedDogs (id, user_id, dog_api_id, dog_photo, dog_url)
+
+**(Applications (id, user_id, dog_api_id, application_text, submitted_at)*Stretch goal)
+**(Admins (id, username, password_hash)*Stretch goal)
 
 
 Functionality Overview:
 --Spotlight section featuring randomly selected or urgent dogs on the homepage
 --Dog search with multiple filters
 --User registration and login (secure with hashed passwords)
---User dashboard with saved dogs and submitted applications
---Admin login with access to view submitted applications
+--User dashboard with saved dogs 
 --Responsive layout for desktop and mobile
 --Stretch: Email sign-up for weekly dog updates (Flask-Mail)
 
@@ -92,6 +90,7 @@ Challenges/Considerations:
 
 
 Stretch Goals:
+--Admin login with access to users accounts
 --Weekly digest emails featuring dogs in need
 --Calendar integration for scheduling adoption appointments or meet-and-greets
 --Filtering results to prioritize dogs in high-kill shelters (if feasible)
